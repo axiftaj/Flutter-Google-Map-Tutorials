@@ -7,6 +7,9 @@ import 'package:googlemap/google_search_places_api.dart';
 import 'package:googlemap/home_screen.dart';
 import 'package:googlemap/polygone_screen.dart';
 import 'package:googlemap/polyline_screen.dart';
+import 'package:googlemap/polyline_two.dart';
+
+import 'ocr_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home:  CustomMarkerScreen(),
+      home:  PolylineTwoScreen(),
     );
   }
 }

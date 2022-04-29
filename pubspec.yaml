@@ -43,8 +43,13 @@ dependencies:
 
   modal_bottom_sheet: ^2.0.1
 
-  http:
   uuid: ^3.0.5
+
+  http:
+  google_fonts:
+  path_provider:
+  image:
+  image_picker:
 
 dev_dependencies:
   flutter_test:
