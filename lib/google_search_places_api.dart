@@ -38,7 +38,7 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
   void getSuggestion(String input) async {
 
 
-    String kPLACES_API_KEY = "AIzaSyDQ2c_pOSOFYSjxGMwkFvCVWKjYOM9siow";
+    String kPLACES_API_KEY = "your api";
     String type = '(regions)';
 
     try{
