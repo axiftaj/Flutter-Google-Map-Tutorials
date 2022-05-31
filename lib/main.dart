@@ -3,13 +3,14 @@ import 'package:googlemap/convert_latlang_to_address.dart';
 import 'package:googlemap/current_location.dart';
 import 'package:googlemap/custom_marker.dart';
 import 'package:googlemap/custom_marker_info_window.dart';
+import 'package:googlemap/custom_marker_with_network_image.dart';
 import 'package:googlemap/google_search_places_api.dart';
 import 'package:googlemap/home_screen.dart';
 import 'package:googlemap/polygone_screen.dart';
 import 'package:googlemap/polyline_screen.dart';
 import 'package:googlemap/polyline_two.dart';
 
-import 'ocr_Screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home:  PolylineTwoScreen(),
+      home:  CustomMarkerWithNetworkImage(),
     );
   }
 }
