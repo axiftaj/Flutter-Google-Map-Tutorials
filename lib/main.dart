@@ -4,6 +4,7 @@ import 'package:googlemap/current_location.dart';
 import 'package:googlemap/custom_marker.dart';
 import 'package:googlemap/custom_marker_info_window.dart';
 import 'package:googlemap/custom_marker_with_network_image.dart';
+import 'package:googlemap/google_map_styling_screen.dart';
 import 'package:googlemap/google_search_places_api.dart';
 import 'package:googlemap/home_screen.dart';
 import 'package:googlemap/polygone_screen.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home:  CustomMarkerWithNetworkImage(),
+      home:  GoolgeMapStyling(),
     );
   }
 }
