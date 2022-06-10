@@ -82,6 +82,7 @@ flutter:
     - images/marker3.png
     - images/car2.png
     - images/map_style.json
+    - images/night_style.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

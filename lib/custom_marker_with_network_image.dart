@@ -61,18 +61,13 @@ class _CustomMarkerWithNetworkImageState extends State<CustomMarkerWithNetworkIm
   loadData ()async{
 
     for(int i = 0 ; i< images.length ; i++ ){
-
-      // Bitmap newBitmap ;
-      // Bitmap bitmap = await Bitmap.fromProvider(NetworkImage('https://media-exp1.licdn.com/dms/image/C5603AQFtuW78eNazIw/profile-displayphoto-shrink_800_800/0/1567442703746?e=1659571200&v=beta&t=3EIKzIls1HcNWGBBcspQlGFiIjRvmnc64MK4LwEncOQ'));
-
-
-      //  Bitmap newBitMap = Bitmap.fromHeadless(30, 30, bitmap.buildHeaded());
-
-      Uint8List? image = await  _loadNetworkImage('https://as2.ftcdn.net/v2/jpg/03/32/56/67/1000_F_332566713_q0QLBQ0BWkG5ed7DGRiuFIjvZNwEL9k2.jpg') ;
+      
+      Uint8List? image = await  _loadNetworkImage('https://images.bitmoji.com/3d/avatar/201714142-99447061956_1-s5-v1.webp') ;
 
       final ui.Codec markerImageCodec = await instantiateImageCodec(
         image!.buffer.asUint8List(),
-        targetWidth: 100,
+        targetHeight: 200,
+        targetWidth: 200,
       );
       final FrameInfo frameInfo = await markerImageCodec.getNextFrame();
       final ByteData? byteData = await frameInfo.image.toByteData(
