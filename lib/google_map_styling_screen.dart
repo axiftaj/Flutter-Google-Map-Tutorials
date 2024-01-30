@@ -41,9 +41,10 @@ class _GoolgeMapStylingState extends State<GoolgeMapStyling> {
 
   @override
   Widget build(BuildContext context) {
-    print('build');
     return Scaffold(
+
       appBar: AppBar(
+        title: const Text('Map staling'),
         actions: <Widget>[
           // This button presents popup menu items.
           PopupMenuButton(

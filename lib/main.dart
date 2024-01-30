@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home:  GoolgeMapStyling(),
+      home:  const GoolgeMapStyling(),
     );
   }
 }
