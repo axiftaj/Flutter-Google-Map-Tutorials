@@ -1,5 +1,7 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_geocoder/geocoder.dart';
+import 'package:location_geocoder/location_geocoder.dart';
+
 
 class ConvertLatLangToAddress extends StatefulWidget {
   const ConvertLatLangToAddress({Key? key}) : super(key: key);
@@ -37,18 +39,28 @@ class _ConvertLatLangToAddressState extends State<ConvertLatLangToAddress> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
 
-          // From coordinates
-          final coordinates = new Coordinates(33.6992, 72.9744);
-          final addresses = await Geocoder.local.findAddressesFromCoordinates(coordinates);
-          final first = addresses.first;
-          print("${first.featureName} : ${first.addressLine}");
+          late LocatitonGeocoder geocoder = LocatitonGeocoder('');
 
-          // From a query
-          final query = "1600 Amphiteatre Parkway, Mountain View";
-          var add = await Geocoder.local.findAddressesFromQuery(query);
-          var second = add.first;
-          print("${second.featureName} : ${second.coordinates}");
-          // setState(() {});
+          final address = await geocoder
+              .findAddressesFromCoordinates(Coordinates(9.9312, 76.2673));
+          var message = address.first.addressLine;
+          if (message == null) return;
+          log(message);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(message),
+            ),
+          );
+
+          final address1 = await geocoder.findAddressesFromQuery('kochi,kerala');
+          var message1 = address1.first.coordinates.toString();
+          log(message1);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(message1),
+            ),
+          );
+
         },
         child: const Icon(Icons.search),
       ),

@@ -14,7 +14,7 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
 
 
   var _controller = TextEditingController();
-  var uuid = new Uuid();
+  var uuid =  Uuid();
   String _sessionToken = '1234567890';
   List<dynamic> _placeList = [];
 
@@ -42,8 +42,7 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
     String type = '(regions)';
 
     try{
-      String baseURL =
-          'https://maps.googleapis.com/maps/api/place/autocomplete/json';
+      String baseURL = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
       String request = '$baseURL?input=$input&key=$kPLACES_API_KEY&sessiontoken=$_sessionToken';
       var response = await http.get(Uri.parse(request));
       var data = json.decode(response.body);
