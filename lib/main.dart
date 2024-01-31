@@ -27,10 +27,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        brightness: Brightness.dark,
       ),
-      home:  const GoolgeMapStyling(),
+      home:  const GoogleMapSearchPlacesApi(),
     );
   }
 }

@@ -40,10 +40,7 @@ dependencies:
   location_geocoder: ^1.0.5
   geocoding: ^2.0.4
   flutter_polyline_points: ^2.0.0
-
-
-  uuid: ^3.0.5
-
+  uuid: ^4.3.3
   http:
   google_fonts:
   path_provider:

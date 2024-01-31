@@ -1,20 +1,22 @@
 import 'dart:convert';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 import 'package:http/http.dart' as http;
 
-class GoogleSearchPlacesApi extends StatefulWidget {
+class GoogleMapSearchPlacesApi extends StatefulWidget {
+  const GoogleMapSearchPlacesApi({Key? key}) : super(key: key);
+
 
   @override
-  _GoogleSearchPlacesApiState createState() => _GoogleSearchPlacesApiState();
+  _GoogleMapSearchPlacesApiState createState() => _GoogleMapSearchPlacesApiState();
 }
 
-class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
+class _GoogleMapSearchPlacesApiState extends State<GoogleMapSearchPlacesApi> {
 
 
-  var _controller = TextEditingController();
-  var uuid =  Uuid();
+  final _controller =  TextEditingController();
+  var uuid =  const Uuid();
   String _sessionToken = '1234567890';
   List<dynamic> _placeList = [];
 
@@ -38,16 +40,17 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
   void getSuggestion(String input) async {
 
 
-    String kPLACES_API_KEY = "your api";
-    String type = '(regions)';
+    const String PLACES_API_KEY = "";
 
     try{
       String baseURL = 'https://maps.googleapis.com/maps/api/place/autocomplete/json';
-      String request = '$baseURL?input=$input&key=$kPLACES_API_KEY&sessiontoken=$_sessionToken';
+      String request = '$baseURL?input=$input&key=$PLACES_API_KEY&sessiontoken=$_sessionToken';
       var response = await http.get(Uri.parse(request));
       var data = json.decode(response.body);
-      print('mydata');
-      print(data);
+      if (kDebugMode) {
+        print('mydata');
+        print(data);
+      }
       if (response.statusCode == 200) {
         setState(() {
           _placeList = json.decode(response.body)['predictions'];
@@ -56,7 +59,7 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
         throw Exception('Failed to load predictions');
       }
     }catch(e){
-     // toastMessage('success');
+      print(e);
     }
 
   }
@@ -66,7 +69,7 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Google Map Search places Api' ,),
+        title: const Text('Search places Api' ,),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -76,12 +79,12 @@ class _GoogleSearchPlacesApiState extends State<GoogleSearchPlacesApi> {
             child: TextField(
               controller: _controller,
               decoration: InputDecoration(
-                hintText: "Seek your location here",
+                hintText: "Search your location here",
                 focusColor: Colors.white,
                 floatingLabelBehavior: FloatingLabelBehavior.never,
-                prefixIcon: Icon(Icons.map),
+                prefixIcon: const Icon(Icons.map),
                 suffixIcon: IconButton(
-                  icon: Icon(Icons.cancel), onPressed: () {
+                  icon: const Icon(Icons.cancel), onPressed: () {
                   _controller.clear() ;
                 },
                 ),

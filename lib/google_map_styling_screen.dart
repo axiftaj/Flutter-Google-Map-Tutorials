@@ -37,14 +37,12 @@ class _GoolgeMapStylingState extends State<GoolgeMapStyling> {
   }
 
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
       appBar: AppBar(
-        title: const Text('Map staling'),
+        title: const Text('Map styling'),
         actions: <Widget>[
           // This button presents popup menu items.
           PopupMenuButton(
@@ -84,10 +82,9 @@ class _GoolgeMapStylingState extends State<GoolgeMapStyling> {
                       });
 
                     }).catchError((error) {
-                      print("error"+error.toString());
                     });
                   },
-                  child: Text("Night"),
+                  child: const Text("Night"),
                   value: 2,
                 )
               ]

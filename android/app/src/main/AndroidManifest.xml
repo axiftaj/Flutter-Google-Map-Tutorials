@@ -10,11 +10,10 @@
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
-<!--       <meta-data android:name="com.google.android.geo.API_KEY"-->
-<!--           android:value="AIzaSyClYpe3KJC3r3g4d66CJC6lHXJOSSJKihc"/>-->
-
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="AIzaSyDQ2c_pOSOFYSjxGMwkFvCVWKjYOM9siow"/>
+           android:value="AIzaSyClYpe3KJC3r3g4d66CJC6lHXJOSSJKihc"/>
+
+
        <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true"/>
 
        <activity
