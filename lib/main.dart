@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
-      home:  const GoogleMapSearchPlacesApi(),
+      home:  const CustomMarkerInfoWindowScreen(),
     );
   }
 }

@@ -132,23 +132,23 @@ class _CustomMarkerInfoWindowScreenState extends State<CustomMarkerInfoWindowScr
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
+                      children:  [
+                         Container(
                           width: 300,
                           height: 100,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
+                          decoration: const BoxDecoration(
+                            image:  DecorationImage(
                                 image: NetworkImage('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?cs=srgb&dl=pexels-narda-yescas-1566837.jpg&fm=jpg'),
                                 fit: BoxFit.fitWidth,
                                 filterQuality: FilterQuality.high),
-                            borderRadius: const BorderRadius.all(
+                            borderRadius:  BorderRadius.all(
                               Radius.circular(10.0),
                             ),
                             color: Colors.red,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10 , left: 10 , right: 10),
+                        const   Padding(
+                          padding:  EdgeInsets.only(top: 10 , left: 10 , right: 10),
                           child: Row(
                             children: [
                               SizedBox(
@@ -158,22 +158,24 @@ class _CustomMarkerInfoWindowScreenState extends State<CustomMarkerInfoWindowScr
                                   maxLines: 1,
                                   overflow: TextOverflow.fade,
                                   softWrap: false,
+                                  style: TextStyle(color: Colors.black),
                                 ),
                               ),
-                              const Spacer(),
+                               Spacer(),
                               Text(
                                 '.3 mi.',
-                                // widget.data!.date!,
+                                style: TextStyle(color: Colors.black),
 
                               )
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10 , left: 10 , right: 10),
+                        const  Padding(
+                          padding:  EdgeInsets.only(top: 10 , left: 10 , right: 10),
                           child: Text(
                             'Help me finish these tacos! I got a platter from Costco and it’s too much.',
                             maxLines: 2,
+                            style: TextStyle(color: Colors.black),
 
                           ),
                         ),
